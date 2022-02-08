@@ -1,0 +1,2 @@
+# School
+Java Maven Projects
