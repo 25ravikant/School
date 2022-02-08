@@ -1,0 +1,104 @@
+/*
+SQLyog Community v13.1.6 (64 bit)
+MySQL - 5.7.19-log : Database - appschool
+*********************************************************************
+*/
+
+/*!40101 SET NAMES utf8 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`appschool` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+USE `appschool`;
+
+/*Table structure for table `classcreation` */
+
+DROP TABLE IF EXISTS `classcreation`;
+
+CREATE TABLE `classcreation` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `class_Name` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `class_Name` (`class_Name`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+
+/*Data for the table `classcreation` */
+
+insert  into `classcreation`(`id`,`class_Name`) values 
+(7,'EIght'),
+(5,'Five'),
+(12,'Nur'),
+(1,'One'),
+(6,'Ten'),
+(4,'Three'),
+(3,'Two');
+
+/*Table structure for table `course` */
+
+DROP TABLE IF EXISTS `course`;
+
+CREATE TABLE `course` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `courseName` varchar(100) DEFAULT NULL,
+  `coursePrice` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+/*Data for the table `course` */
+
+insert  into `course`(`id`,`courseName`,`coursePrice`) values 
+(1,'Java',2500),
+(3,'Android',60000),
+(5,'Spring',40000),
+(6,'Php',9000),
+(7,'Java',1000);
+
+/*Table structure for table `createyear` */
+
+DROP TABLE IF EXISTS `createyear`;
+
+CREATE TABLE `createyear` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `f_year` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `f_year` (`f_year`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+/*Data for the table `createyear` */
+
+insert  into `createyear`(`id`,`f_year`) values 
+(1,'2021-22'),
+(2,'2022-23'),
+(3,'2023-24'),
+(5,'2024-25'),
+(7,'2025-2026');
+
+/*Table structure for table `student` */
+
+DROP TABLE IF EXISTS `student`;
+
+CREATE TABLE `student` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `studentName` varchar(50) DEFAULT NULL,
+  `contact` varchar(15) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `classid` int(10) DEFAULT NULL,
+  `courseid` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+/*Data for the table `student` */
+
+insert  into `student`(`id`,`studentName`,`contact`,`email`,`classid`,`courseid`) values 
+(1,'Ravi Kant','95259333450','ravikantdev@gmail.com',7,3),
+(2,'Demo st','7896541230','demo@gmail.com',6,5);
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
